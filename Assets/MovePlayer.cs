@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovePlayer : MonoBehaviour
 {
-    public float VelocidadeAndar=5;
+    public float VelocidadeAndar = 5;
     public float VelocidadeRodar = 5;
     CharacterController _characterController;
     private float InputAndar;
