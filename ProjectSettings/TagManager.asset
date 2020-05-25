@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - DropPoint
+  - Fire
+  - MenuDerrota
+  - TxtOvos
   layers:
   - Default
   - TransparentFX

@@ -15,6 +15,8 @@ public class Saude : MonoBehaviour
     public void retiraVida(int valor)
     {
         vida -= valor;
+        if (vida <= 0)
+            Destroy(this.gameObject);
     }
 
     public void adicionaVida(int valor)

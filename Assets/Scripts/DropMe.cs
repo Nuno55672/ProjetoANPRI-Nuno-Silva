@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DropMe : MonoBehaviour
 {
+    GameManager _gameManager;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -16,6 +17,9 @@ public class DropMe : MonoBehaviour
             //cair
             transform.parent = null;
             GetComponent<Rigidbody>().isKinematic = false;
+            _gameManager = FindObjectOfType<GameManager>();
+            _gameManager.adicionaOvo();
+            Destroy(GetComponent<DropMe>());
         }
     }
 

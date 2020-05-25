@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveNPC : MonoBehaviour
 {
     [SerializeField]
-    Transform[] pontos;
+    Transform[] pontos; //este vetor terá os pontos em que o NPC vai passar
     public int proximoPonto = 0;
     [SerializeField]
     float velocidade;
@@ -14,7 +14,7 @@ public class MoveNPC : MonoBehaviour
     [SerializeField]
     bool emMovimento = false;
     Rigidbody _rigidbody;
-    
+    // Start is called before the first frame update
     void Start()
     {
         if (pontos.Length == 0)
@@ -22,10 +22,10 @@ public class MoveNPC : MonoBehaviour
             Debug.Log("Tem de indicar os pontos a percorrer");
             return;
         }
-        _rigidbody = GetComponent<Rigidbody>();
+        _rigidbody = GetComponent<Rigidbody>();     //faz cache do rigidbody
     }
 
-    
+    // Update is called once per frame
     void Update()
     {
         if (pontos.Length == 0)
@@ -33,19 +33,22 @@ public class MoveNPC : MonoBehaviour
             Debug.Log("Tem de indicar os pontos a percorrer");
             return;
         }
-        
+        //distancia para o próximo ponto
         Debug.Log(Vector3.Distance(transform.position, pontos[proximoPonto].position));
         if (Vector3.Distance(transform.position, pontos[proximoPonto].position) < distanciaMinima)
         {
+            //passa para o próxmo
             proximoPonto++;
-            if (proximoPonto > pontos.Length - 1)
+            if (proximoPonto > pontos.Length - 1)   //não tem mais pontos volta ao inicio
                 proximoPonto = 0;
         }
-        
+        //direcao
         Vector3 direcao = pontos[proximoPonto].position - transform.position;
-        
+        //rodar na direção do próximo ponto
         Quaternion rotacao = Quaternion.LookRotation(direcao, Vector3.up);
         transform.rotation = rotacao;
+        //anda na direção do ponto
+        //transform.Translate(Vector3.forward*velocidade*Time.deltaTime);
         _rigidbody.MovePosition(transform.position + (transform.forward *velocidade* Time.deltaTime));
     }
 
