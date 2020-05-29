@@ -521,7 +521,7 @@ PrefabInstance:
     - target: {fileID: 3231750352161928159, guid: 59af27a20dc101445b2e279a56f9de47,
         type: 3}
       propertyPath: raioExplosao
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6797803876699125282, guid: 59af27a20dc101445b2e279a56f9de47,
         type: 3}
@@ -1979,7 +1979,7 @@ PrefabInstance:
     - target: {fileID: 3231750352161928159, guid: 59af27a20dc101445b2e279a56f9de47,
         type: 3}
       propertyPath: raioExplosao
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6797803876699125282, guid: 59af27a20dc101445b2e279a56f9de47,
         type: 3}
